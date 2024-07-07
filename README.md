@@ -21,8 +21,8 @@ Make sure you have the following versions of Node.js and npm installed on your s
 
 1. Clone this repository:
     ```bash
-    git clone https://github.com/eliudiaz/sierra-code-challenge.git
-    cd sierra-code-challenge
+    git clone https://github.com/eliudiaz/code-challenge.git
+    cd code-challenge
     ```
 
 2. Install the dependencies:
