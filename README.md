@@ -36,3 +36,12 @@ To start the server in development mode, run the following command:
 
 ```bash
 npm run dev
+```
+
+## 📚 Documentation
+The API documentation is available on Swagger UI. Once the server is running, you can access it at:
+
+``` bash
+curl http://localhost:3000/api-docs
+
+```
