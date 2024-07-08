@@ -31,7 +31,7 @@ class ListingController {
         }
 
         const id: string = `${this.listings.length + 1}`;
-        const newListing: Listing = {title, newPrice, description, id} as Listing;
+        const newListing: Listing = {title, price, description, id} as Listing;
         this.listings.push(newListing);
         resp.status(201).json(newListing);
     }
