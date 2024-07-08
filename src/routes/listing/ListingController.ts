@@ -1,5 +1,6 @@
 import {Router, Request, Response} from "express";
 import {Listing} from "../../model/Listing";
+import {isNumberObject} from "node:util/types";
 
 class ListingController {
     private listings: Listing[] = [];
@@ -14,14 +15,23 @@ class ListingController {
         defaultRouter.delete('/:id', this.deleteOne)
     }
 
+    private isValidNumber(value:any){
+        return typeof value==='number' && !isNaN(value);
+    }
+
     private create = (req: Request, resp: Response) => {
         const {title, price, description} = req.body;
         if (!title || !price || !description) {
             resp.status(400).send("Invalid input!");
             return;
         }
+        if (!this.isValidNumber(price)) {
+            resp.status(400).send("Invalid price input. Only valid numbers are allowed");
+            return;
+        }
+
         const id: string = `${this.listings.length + 1}`;
-        const newListing: Listing = {title, price, description, id} as Listing;
+        const newListing: Listing = {title, newPrice, description, id} as Listing;
         this.listings.push(newListing);
         resp.status(201).json(newListing);
     }

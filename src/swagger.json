@@ -17,7 +17,7 @@
     }
   ],
   "paths": {
-    "/listing": {
+    "/listings": {
       "get": {
         "summary": "Retrieve a list of listings",
         "tags": ["Listings"],
@@ -66,10 +66,6 @@
                 "type": "object",
                 "required": ["id", "description", "price", "title"],
                 "properties": {
-                  "id": {
-                    "type": "string",
-                    "example": "2"
-                  },
                   "description": {
                     "type": "string",
                     "example": "new listing"
@@ -122,7 +118,7 @@
         }
       }
     },
-    "/listing/{id}": {
+    "/listings/{id}": {
       "delete": {
         "summary": "Delete a listing by ID",
         "tags": ["Listings"],
